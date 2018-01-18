@@ -1,0 +1,46 @@
+$blue: #1874cd;
+$cream: #f0f0f0; // Background color on html
+
+#map.lewis-and-clark-map {
+  height: 80vh;
+}
+
+.youtube-embed {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.youtube-iframe {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.mapboxgl-popup-content {
+  max-width: 250px;
+  text-align: center;
+
+  h2 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+footer {
+  .blue-goose {
+    display: block;
+    margin: auto;
+    max-width: 100px;
+  }
+  .compiled-by {
+    text-align: center;
+  }
+}
+
+@import 'infowindow';

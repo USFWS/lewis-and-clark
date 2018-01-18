@@ -1,0 +1,70 @@
+{
+  "name": "lewis-and-clark",
+  "version": "1.0.0",
+  "description":
+    "Visit National Wildlife Refuges along the Lewis and Clark Trail",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": ["env"]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "images": "node build/images",
+    "build:js":
+      "browserify src/js/index.js | uglifyjs -mc comparisons=false > dist/js/lewis-and-clark.js",
+    "watch:js": "watchify src/js/index.js -o dist/js/lewis-and-clark.js -dv",
+    "watch":
+      "npm run html & npm run watch:js & npm run watch:sass & npm run data",
+    "data": "node build/data",
+    "html": "node build/html",
+    "watch:sass":
+      "node-sass -w src/scss/styles.scss dist/css/lewis-and-clark.css",
+    "build:sass":
+      "node-sass --output-style compressed src/scss/styles.scss | postcss -c postcss.config.js -o dist/css/lewis-and-clark.css",
+    "serve": "browser-sync start -s 'dist' --files 'dist/**/*'",
+    "inspect":
+      "browserify --full-paths index.js | uglifyjs -mc comparisons=false | discify --open",
+    "prestart": "npm run build:sass & npm run images",
+    "start": "NODE_ENV=development npm run watch & npm run serve",
+    "build":
+      "NODE_ENV=production npm run build:js && npm run html && npm run build:sass && npm run data && npm run images"
+  },
+  "keywords": [],
+  "author": "@r0yhewitt <roy_hewitt@fws.gov>",
+  "license": "SAX-PD",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.23.5",
+    "browserify": "^15.2.0",
+    "cheerio": "^1.0.0-rc.2",
+    "chokidar": "^2.0.0",
+    "cssnano": "^3.10.0",
+    "date-fns": "^1.29.0",
+    "disc": "^1.3.3",
+    "imagemin": "^5.3.1",
+    "imagemin-mozjpeg": "^7.0.0",
+    "jsonminify": "^0.4.1",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.1",
+    "sharp": "^0.19.0",
+    "uglify-js": "^3.3.7",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "classlist-polyfill": "^1.2.0",
+    "mapbox-gl": "^0.43.0",
+    "scroll": "^2.0.1",
+    "underscore.string": "^3.3.4",
+    "xhr": "^2.4.1"
+  }
+}
