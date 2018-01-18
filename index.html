@@ -1,0 +1,194 @@
+<!DOCTYPE html><html class="no-js" lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>Lewis and Clark Trail | U.S. Fish and Wildlife Service</title>
+
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.fws.gov/refuges/css/styles.css">
+    <link rel="stylesheet" href="./css/lewis-and-clark.css">
+  </head>
+  <body>
+    <a href="#content" class="skip-to-content">Skip to content</a>
+    <header class="site-header">
+
+      <img class="usfws-logo" src="https://www.fws.gov/southeast/images/svg/logo.svg" alt="Official logo of the National Wildlife Refuge System">
+
+      <div class="search-bar">
+        <span>U.S. Fish and Wildlife Service</span>
+        <form method="get" action="https://search.usa.gov/search" id="search_form" class="site-search-form">
+          <input id="affiliate" name="affiliate" type="hidden" value="fws.gov">
+          <label for="query-field" class="screen-reader-text">Search</label>
+          <input name="query" type="text" id="query-field" size="32" maxlength="250" placeholder="Search...">
+          <input name="submit" type="image" src="https://www.fws.gov/refuges/lawEnforcement/img/input_search.gif" align="absmiddle" class="search-button" value="">
+        </form>
+      </div>
+
+      <div class="title-bar">
+        <!-- This is the BIG BLUE TITLE on each page -->
+        <h1 class="page-title"><a href="./">National Wildlife Refuges Along the Lewis and Clark Trail</a></h1>
+
+        <div class="refuge-system-logo">
+          <img src="https://www.fws.gov/southeast/images/leaflet/blue-goose.svg" alt="Official logo of the National Wildlife Refuge System">
+          <span>National Wildlife Refuge System</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-trigger">Menu</button>
+        <ul class="main-nav-menu">
+          <li><a href="https://www.fws.gov/refuges">Home</a></li>
+          <!-- MAKE SURE YOU LEAVE ARIA-* PROPERTIES; THEY'RE USED TO SHOW/HIDE NAV ELEMENTS  -->
+          <li>
+            <button aria-expanded="false" aria-controls="nav-1">About</button>
+            <ul id="nav-1" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/history/">History</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/mission.html">Mission and Guiding Principles</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/faq.html">FAQ and Fact Sheets</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/FunOnWildlifeRefuges/">Fun on Wildlife Refuges</a></li>
+              <li><a href="http://www.fws.gov/FieldNotes/">Field Notes</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/RefugeReports/">Refuge Reports</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/ConservationHeroes/">Conservation Heroes</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/multimedia.html">Multimedia</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/careers.html">Careers</a></li>
+              <li><a href="http://www.fws.gov/refuges/about/archives.html">Archives</a></li>
+            </ul>
+          </li>
+          <li>
+            <button aria-expanded="false" aria-controls="nav-2">Land</button>
+            <ul id="nav-2" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/realty/index.html">Realty Activities</a></li>
+              <li><a href="http://www.fws.gov/birds/get-involved/duck-stamp.php">Federal Duck Stamp</a></li>
+              <li><a href="http://www.fws.gov/refuges/smallWetlands/">Small Wetlands Program</a></li>
+              <li><a href="http://www.fws.gov/refuges/land/LandReport.html">Annual Lands Report</a></li>
+              <li><a href="http://www.fws.gov/refuges/land/RecentRefuges.html">Recent Refuges</a></li>
+              <li><a href="http://www.fws.gov/gis/index.html">GIS Data</a></li>
+              <li><a href="http://www.fws.gov/refuges/realty/links.html">Regional and Other Agency Programs</a></li>
+              <li><a href="http://www.fws.gov/refuges/realty/faq.html">FAQ</a></li>
+            </ul>
+          </li>
+          <li>
+            <button aria-expanded="false" aria-controls="nav-3">Planning</button>
+            <ul id="nav-3" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/planning/LandscapeConservationDesign.html">Landscape Conservation Design</a></li>
+              <li><a href="http://www.fws.gov/refuges/planning/ComprehensiveConservationPlans.html">Comprehensive Conservation Plans (CCPs)</a></li>
+              <li><a href="http://www.fws.gov/refuges/planning/StrategicGrowth.html">Strategic Growth</a></li>
+              <li><a href="http://www.fws.gov/refuges/planning/ClimateChangePlanning.html">Climate Change Planning</a></li>
+            </ul>
+          </li>
+          <li>
+            <button aria-expanded="false" aria-controls="nav-4">Visitors</button>
+            <ul id="nav-4" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/SpecialEvents/FWS_SpecialEvents_Search.cfm">Special Events</a></li>
+              <li><a href="http://www.fws.gov/refuges/hunting/">Hunting</a></li>
+              <li><a href="http://www.fws.gov/refuges/fishingguide/">Fishing</a></li>
+              <li><a href="https://www.fws.gov/refuges/visitors/trapping.html">Trapping</a></li>
+              <li><a href="http://www.fws.gov/refuges/birding/">Birding</a></li>
+              <li><a href="http://www.fws.gov/refuges/photography/">Photography</a></li>
+              <li><a href="http://www.fws.gov/refuges/observation/">Observation/Cultural Resources/Trails</a></li>
+              <li><a href="http://www.fws.gov/refuges/education/">Education/Interpretation</a></li>
+              <li><a href="http://www.fws.gov/refuges/kids/">Kids</a></li>
+              <li><a href="http://www.fws.gov/refuges/visitors/permitspasses.html">Permits and Passes</a></li>
+              <li><a href="http://www.fws.gov/refuges/lawEnforcement/index.php">Law Enforcement</a></li>
+            </ul>
+          </li>
+          <li>
+            <button aria-expanded="false" aria-controls="nav-5">Wildlife &amp; Habitat Management</button>
+            <ul id="nav-5" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/whm/habitat.html">Habitat</a></li>
+              <li><a href="http://www.fws.gov/refuges/whm/wilderness.html">Wilderness and Special Places</a></li>
+              <li><a href="https://www.fws.gov/endangered/">Endangered Species</a></li>
+              <li><a href="http://www.fws.gov/refuges/whm/coastalandmarine.html">Coastal and Marine Resources</a></li>
+              <li><a href="http://www.fws.gov/refuges/whm/migratorybirds.html">Migratory Birds</a></li>
+              <li><a href="http://www.fws.gov/refuges/oil-and-gas/">Oil and Gas</a></li>
+              <li><a href="http://www.fws.gov/refuges/NaturalResourcePC/">Natural Resource Program Center</a></li>
+              <li><a href="http://www.fws.gov/invasives/nwrs.html">Invasive Species</a></li>
+              <li><a href="http://www.fws.gov/fire/">Fire Management</a></li>
+              <li><a href="http://www.fws.gov/refuges/whm/contaminants.html">Contaminants</a></li>
+              <li><a href="http://www.fws.gov/refuges/AirQuality/index.html">Air Quality</a></li>
+              <li><a href="http://www.fws.gov/refuges/whm/climateChange.html">Climate Change</a></li>
+            </ul>
+          </li>
+          <li>
+            <button aria-expanded="false" aria-controls="nav-6">Policies &amp; Budget</button>
+            <ul id="nav-6" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/policiesandbudget/budget.html">Budget</a></li>
+              <li><a href="http://www.fws.gov/refuges/roads/">Roads</a></li>
+              <li><a href="http://www.fws.gov/refuges/policiesandbudget/mandates.html">Legislative Mandates</a></li>
+              <li><a href="http://www.fws.gov/policy/frsystem/default.cfm">Federal Register</a></li>
+              <li><a href="http://www.fws.gov/pdm/">Policy and Directives Management</a></li>
+              <li><a href="http://www.fws.gov/policy/direct.html">Service Manual</a></li>
+            </ul>
+          </li>
+          <li>
+            <button aria-expanded="false" aria-controls="nav-7">You Can Help</button>
+            <ul id="nav-7" aria-hidden="true">
+              <li><a href="http://www.fws.gov/refuges/friends/">Friends</a></li>
+              <li><a href="http://www.fws.gov/volunteers/">Volunteers</a></li>
+              <li><a href="http://www.fws.gov/refuges/youcanhelp/partnerships.html">Partnerships</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content">
+      <div id="map" class="lewis-and-clark-map"></div>
+    </main>
+
+    <footer>
+      <img src="https://www.fws.gov/southeast/images/leaflet/blue-goose.svg" alt="The Refuge Systems blue goose" class="blue-goose">
+      <p class="compiled-by">Compiled by <a href="mailto:bill_o&apos;brian@fws.gov?subject=Trail%20of%20Tears">Bill O&apos;Brian</a> and <a href="mailto:Roy_Hewitt@fws.gov?subject=Trail%20of%20Tears">Roy Hewitt</a>.</p>
+      <p class="last-updated">January 17, 2018</p>
+      <ul class="social-links">
+        <li>
+          <a href="https://twitter.com/USFWSRefuges" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.8 71.6" class="icon twitter"><title>Twitter</title><path d="M29.4 71.6c32.6-.8 50.3-27.9 50.3-51.4 0-.8 0-1.6-.1-2.3 3.6-2.5 6.6-5.7 9.1-9.4-3.3 1.4-6.8 2.4-10.5 2.8 3.8-2.2 6.6-5.8 8-10-3.5 2.1-7.4 3.6-11.6 4.4C71.4 2.2 66.7 0 61.5 0 51.4 0 43.2 8.1 43.2 18.1c0 1.4.2 2.8.5 4.1-15.1-.8-28.6-8-37.5-18.9C4.6 6 3.7 9.1 3.7 12.4c0 6.3 3.2 11.8 8.1 15-3-.1-5.8-.9-8.3-2.3v.2c0 8.8 6.3 16.1 14.6 17.7-1.5.4-3.1.6-4.8.6-1.2 0-2.3-.1-3.4-.3 2.3 7.2 9 12.4 17 12.6-6.2 4.8-14.1 7.7-22.6 7.7-1.5 0-2.9-.1-4.3-.3 7.8 4.9 17 7.9 26.8 8.1h2.6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/USFWSRefuges/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.9 44.3" class="icon facebook" title="Facebook"><title>Facebook</title><path d="M8.8 1.3c-1.7.9-2.9 2.2-3.5 3.6-.6 1.4-.9 3.4-.9 6.1v1H0v8.8h4.4v23.5h10.5V20.8h5.9V12h-5.9v-.8c0-1.7.3-2.1.4-2.2.2-.2.8-.4 1.5-.4 1 0 2.2.1 3.3.4l1.3.3 1.5-8-1.1-.4C17.2-.4 12-.4 8.8 1.3z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/user/USFWS/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 58.7" class="icon youtube"><title>YouTube</title><path d="M76.8 0H9.2C4.1 0 0 4.1 0 9.2v40.3c0 5 4.1 9.2 9.2 9.2h67.7c5 0 9.2-4.1 9.2-9.2V9.2C86 4.1 81.9 0 76.8 0zM30.9 43.3v-28l24.2 14-24.2 14z"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="footer-links">
+        <li><a href="https://www.fws.gov">U.S. Fish and Wildlife Service</a></li>
+        <li><a href="https://www.doi.gov">Department of the Interior</a></li>
+        <li><a href="https://www.usa.gov">USA.gov</a></li>
+        <li><a href="https://www.fws.gov/help/about_us.html">About the U.S. Fish and Wildlife Service</a></li>
+        <li><a href="https://www.fws.gov/help/accessibility.html">Accessibility</a></li>
+        <li><a href="https://www.fws.gov/help/policies.html">Privacy</a></li>
+        <li><a href="https://www.fws.gov/help/notices.html">Notices</a></li>
+        <li><a href="https://www.fws.gov/help/disclaimer.html">Disclaimer</a></li>
+        <li><a href="https://www.fws.gov/irm/bpim/foia.html">FOIA</a></li>
+      </ul>
+    </footer>
+
+    <!-- Everypage.js handles navigation and other site-wide responsibilities -->
+    <script src="https://www.fws.gov/refuges/js/everypage.js"></script>
+    <script src="./js/lewis-and-clark.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+    // Only register a page view if we're in production, not on the staging server
+if (window.location.origin.indexOf('https://www.fws.gov')) {
+  window.ga = function() {
+    ga.q.push(arguments);
+  };
+  ga.q = [];
+  ga.l = +new Date();
+  ga('create', 'UA-20707705-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+
+</body></html>
