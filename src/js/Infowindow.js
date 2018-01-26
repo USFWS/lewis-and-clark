@@ -33,8 +33,8 @@ Infowindow.prototype.render = function(locations) {
     <div class='youtube-embed'>
       <iframe src="//www.youtube.com/embed/${video.id}" class="youtube-iframe"
         allowfullscreenf frameborder="0" title='${video.title}'></iframe>
-      <p class="photo-caption">${video.caption}</p>
     </div>
+    <p class="photo-caption">${video.caption}</p>
   `;
   const createListItem = l => {
     const props = l.properties;
