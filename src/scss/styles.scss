@@ -33,6 +33,15 @@ $cream: #f0f0f0; // Background color on html
 }
 
 footer {
+  .sources {
+    margin: auto;
+    max-width: 500px;
+
+    h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
   .blue-goose {
     display: block;
     margin: auto;
@@ -44,3 +53,4 @@ footer {
 }
 
 @import 'infowindow';
+@import 'sidecar';

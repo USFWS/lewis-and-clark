@@ -1,0 +1,80 @@
+/*
+  SIDECAR
+*/
+
+.sidecar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 401;
+}
+
+.sidecar li:first-child .sidecar-link {
+  border-top-left-radius: 5px;
+}
+
+.sidecar li:last-child .sidecar-link {
+  border-bottom-left-radius: 5px;
+}
+
+.sidecar-link {
+  background: $blue;
+  border: 0;
+  clear: both;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  height: 40px;
+  padding: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.sidecar-link:hover {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.sidecar-link:hover .sidecar-label {
+  max-width: 300px;
+}
+
+.sidecar-link:hover .icon {
+  margin-left: 0.5em;
+}
+
+.sidecar-label {
+  display: block;
+  float: left;
+  line-height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  text-overflow: ellipsis;
+  transition: all 0.3s;
+}
+
+.sidecar svg {
+  fill: white;
+  height: 25px;
+  width: 25px;
+}
+
+.geolocate-icon.loading {
+  animation: rotate 1.5s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
