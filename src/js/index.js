@@ -11,6 +11,7 @@ const Infowindow = require('./Infowindow');
 mapboxgl.accessToken =
   'pk.eyJ1Ijoicmhld2l0dCIsImEiOiJjamNob3kwc3oybjRiMnF1ajlodjU2aXppIn0.OuSs426CqQ__H9Cz6x-3Aw';
 
+const fullExtent = document.querySelector('.full-extent');
 const padding = { top: 50, left: 450, right: 50, bottom: 50 };
 
 const popup = new mapboxgl.Popup({
@@ -31,6 +32,10 @@ const getBounds = geojson =>
     new mapboxgl.LngLatBounds()
   );
 
+const zoomToFullExtent = (map, geojson) => {
+  map.fitBounds(getBounds(geojson), { padding });
+};
+
 const initialize = (err, results) => {
   if (err) console.error(err);
   const sidebar = new Infowindow({
@@ -41,12 +46,14 @@ const initialize = (err, results) => {
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-103.261, 40.267],
+    center: [-109.803, 42.978],
     zoom: 4
   });
 
+  map.addControl(new mapboxgl.NavigationControl());
+
   map.on('load', () => {
-    map.fitBounds(getBounds(results.locations), { padding });
+    zoomToFullExtent(map, results.locations);
     map.addLayer({
       id: 'trail',
       type: 'line',
@@ -78,8 +85,8 @@ const initialize = (err, results) => {
       },
       filter: [
         '!=',
-        'name',
-        'National Wildlife Refuges<br>Along the Lewis and Clark Trail'
+        ['get', 'name'],
+        'National Wildlife Refuges<br>Along the Lewis and Clark National Historic Trail'
       ]
     });
   });
@@ -111,6 +118,10 @@ const initialize = (err, results) => {
     map.getCanvas().style.cursor = '';
     popup.remove();
   });
+
+  fullExtent.addEventListener('click', () =>
+    zoomToFullExtent(map, results.locations)
+  );
 };
 
 const getFile = (path, cb) => {
