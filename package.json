@@ -34,6 +34,7 @@
     "start": "NODE_ENV=development npm run watch & npm run serve",
     "build":
       "NODE_ENV=production npm run build:js && npm run html && npm run build:sass && npm run data && npm run images",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
